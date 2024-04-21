@@ -367,5 +367,14 @@ namespace UnityEngine.UI.Extensions
             eventData.useDragThreshold = false;
         }
 
+        public void SetXWithoutNotify(float x)
+        {
+            SetX(x, false);
+        }
+
+        public void SetYWithoutNotify(float y)
+        {
+            SetY(y, false);
+        }
     }
 }
