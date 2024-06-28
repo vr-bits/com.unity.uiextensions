@@ -93,6 +93,9 @@ namespace UnityEngine.UI.Extensions
 
 		[System.Serializable]
 		public class SelectionChangedEvent : Events.UnityEvent<int> { }
+		
+		[System.Serializable]
+		public class OnToggleEvent : Events.UnityEvent<bool> { }
 
 		// fires when item is changed;
 		[Header("Events")]
@@ -439,12 +442,13 @@ namespace UnityEngine.UI.Extensions
 		{
 			ToggleDropdownPanel();
 		}		
-
+		
 		/// <summary>
 		/// Toggle the drop down list if it is active
 		/// </summary>
 		public void ToggleDropdownPanel()
 		{
+			OnToggleEvent(!isActive);
 			if (!isActive)
 			{
 				return;
