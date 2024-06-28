@@ -100,6 +100,7 @@ namespace UnityEngine.UI.Extensions
 		// fires when item is changed;
 		[Header("Events")]
 		public SelectionChangedEvent OnSelectionChanged;
+		public OnToggleEvent OnToggle;
 
 		[System.Serializable]
 		public class ControlDisabledEvent : Events.UnityEvent<bool> { }
@@ -448,7 +449,7 @@ namespace UnityEngine.UI.Extensions
 		/// </summary>
 		public void ToggleDropdownPanel()
 		{
-			OnToggleEvent(!isActive);
+			OnToggle.Invoke(!isActive);
 			if (!isActive)
 			{
 				return;
